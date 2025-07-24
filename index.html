@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced PNG/GIF Letter Generator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Advanced Text Generator 🎞️</h1>
+        
+        <!-- Input Controls -->
+        <div class="control-grid">
+            <input type="text" id="text-input" placeholder="Type your text..." autocomplete="off" class="span-full">
+            <select id="style-select" class="span-half">
+                <option value="style1">Style 1</option>
+                <option value="style2">Style 2</option>
+            </select>
+            <select id="animation-select" class="span-half">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+
+        <!-- Styling Controls -->
+        <div class="control-section">
+            <h3>Styling & Positioning</h3>
+            <div class="control-grid sliders">
+                <label for="size-slider">Size: <span id="size-value">1.0x</span></label>
+                <input type="range" id="size-slider" min="0.2" max="3" step="0.1" value="1">
+                
+                <label for="spacing-slider">Spacing: <span id="spacing-value">0px</span></label>
+                <input type="range" id="spacing-slider" min="-20" max="50" step="1" value="0">
+                
+                <label for="curve-slider">Curve: <span id="curve-value">0</span></label>
+                <input type="range" id="curve-slider" min="-250" max="250" step="1" value="0">
+
+                <label for="rotation-slider">Rotation: <span id="rotation-value">0°</span></label>
+                <input type="range" id="rotation-slider" min="-45" max="45" step="1" value="0">
+
+                <label for="align-slider">V-Align: <span id="align-value">0px</span></label>
+                <input type="range" id="align-slider" min="-1000" max="1000" step="1" value="0">
+            </div>
+        </div>
+
+        <!-- Live Preview -->
+        <h2>Live Animation Preview</h2>
+        <div class="preview-container">
+            <canvas id="preview-canvas"></canvas>
+        </div>
+
+        <!-- Download Buttons -->
+        <div class="download-buttons">
+            <button id="download-png-btn">Download as PNG</button>
+            <button id="download-gif-btn">Download as GIF</button>
+        </div>
+        
+        <!-- Hidden canvas for rendering final output -->
+        <canvas id="render-canvas" style="display: none;"></canvas>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="js/gif.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
